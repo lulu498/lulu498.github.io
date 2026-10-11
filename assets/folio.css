@@ -594,9 +594,9 @@ main>footer.closing-footer>a:last-child>span{font-size:18px}
  #works .filters button{flex-shrink:0;font-size:13px;padding-bottom:14px!important}
  #works .project-grid.collection-grid>.collection-project:nth-child(n),#works .project-grid.collection-grid>.collection-project.collection-lead{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;column-gap:0;row-gap:0;padding:38px 0 44px}
  #works .project-grid.collection-grid>.collection-project:last-child{padding-bottom:0}
- #works .project-grid.collection-grid>.collection-project:nth-child(n) .collection-cover{grid-column:1;grid-row:1;width:100%;height:auto;aspect-ratio:16/9;border-radius:16px 16px 0 0}
- #works .frame-rail{grid-column:1;grid-row:2;padding:12px 14px;min-height:76px;border-radius:0 0 16px 16px}
- #works .collection-caption,#works .collection-lead .collection-caption{grid-column:1;grid-row:3;margin:18px 0 0;padding:26px 26px 22px;border-radius:18px}
+ #works .project-grid.collection-grid>.collection-project:nth-child(n) .collection-cover{grid-column:1;grid-row:2;width:100%;height:auto;aspect-ratio:16/9;border-radius:16px 16px 0 0}
+ #works .frame-rail{grid-column:1;grid-row:3;padding:12px 14px;min-height:76px;border-radius:0 0 16px 16px}
+ #works .collection-caption,#works .collection-lead .collection-caption{grid-column:1;grid-row:1;margin:0 0 18px;padding:26px 26px 22px;border-radius:18px}
  #works .collection-caption>.project-number,#works .collection-lead .project-number{position:static;font-size:30px;margin-bottom:18px}
  #works .collection-lead .project-number{font-size:38px}
  #works .collection-caption h3{font-size:28px;padding:0}#works .collection-lead .collection-caption h3{font-size:34px}
