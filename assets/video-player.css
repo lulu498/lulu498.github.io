@@ -1,0 +1,39 @@
+/* Video-only upgrade; the existing portfolio layout and project text are retained. */
+.media-video.folio-film{display:block;background:#17131a!important;color:#fbf5f9;font-family:inherit;overflow:hidden}
+.folio-film-stage{display:block;position:relative;width:100%;aspect-ratio:var(--film-ratio,1.77778);margin:0 auto;background:#0e0c10;isolation:isolate}
+.folio-film.is-portrait .folio-film-stage{width:min(100%,calc(72svh * var(--film-ratio)));min-width:0}
+.folio-film .folio-film-stage>.folio-film-video,
+.case-view .view-media.gallery-grid .media-video.folio-film video.folio-film-video{display:block;position:absolute;inset:0;width:100%;height:100%;min-height:0;max-height:none;aspect-ratio:auto;object-fit:contain;border-radius:0;background:#0e0c10}
+.folio-film-idle{position:absolute;inset:0;display:block;background:#17131a}
+.folio-film-poster,.folio-film-placeholder{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.folio-film .folio-film-idle>.folio-film-poster{width:100%;height:100%;border-radius:0;object-fit:contain}
+.folio-film-placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#43313f,#18131d);color:#e4c9da;font:400 15px/1.4 Arial,sans-serif;letter-spacing:.24em}
+.folio-film-start{position:absolute;inset:0;display:flex;flex-direction:column;gap:13px;align-items:center;justify-content:center;width:100%;height:100%;padding:20px;border:0;border-radius:0;color:white;background:linear-gradient(0deg,#08050d30,#08050d18);cursor:pointer;text-shadow:0 1px 8px #0009;font-family:inherit;font-size:13px;font-weight:500;line-height:1.5;letter-spacing:.08em;touch-action:manipulation}
+.folio-film-play-icon{display:grid;place-items:center;width:76px;height:76px;border:1px solid #fff9;border-radius:50%;background:#201724a6;box-shadow:0 8px 30px #0003;transition:background .18s,transform .18s}
+.folio-film-play-icon:after{content:"";display:block;width:0;height:0;margin-left:5px;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:16px solid #fff}
+.folio-film-start:hover .folio-film-play-icon{background:#755266;transform:scale(1.04)}
+.folio-film-start:focus-visible{outline:3px solid #e5b8d7;outline-offset:-6px}
+.folio-film-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:8px 18px;border-top:1px solid #ffffff17;background:#211b25;color:#d8c9d4;font-size:12px;line-height:1.5}
+.folio-film-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.folio-film-time{font-variant-numeric:tabular-nums;white-space:nowrap;color:#cbbac6}
+.folio-film-quality{display:flex;align-items:center;gap:8px;white-space:nowrap;color:#cbbac6;font-size:12px}
+.folio-film-quality select{font:inherit;min-height:36px;padding:6px 28px 6px 10px;border:1px solid #ffffff30;border-radius:7px;background:#322735;color:#fff5fb;cursor:pointer;max-width:108px}
+.folio-film-quality select:focus-visible,.folio-film-download:focus-visible{outline:2px solid #e5b8d7;outline-offset:3px}
+.folio-film-download{display:inline-flex;min-height:36px;align-items:center;color:#efdeea;font-size:12px;text-decoration:none}
+.folio-film-download:hover{text-decoration:underline}
+.folio-film-buffering{position:absolute;z-index:2;left:50%;top:44%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:30px;background:#100c16d9;color:white;font-size:13px;white-space:nowrap;pointer-events:none}
+.folio-film-spinner{width:17px;height:17px;flex:none;border:2px solid #ffffff35;border-top-color:#fff;border-radius:50%;animation:folio-video-spin .85s linear infinite}
+.folio-film-error{display:block;padding:0 18px 14px;background:#211b25;color:#ffd1dd;font-size:12px;line-height:1.7}
+.folio-film-cover{position:relative;display:block;width:100%;height:100%;overflow:hidden}
+.folio-film-cover>.folio-film-poster{width:100%;height:100%;object-fit:cover}
+.folio-film-duration{position:absolute;right:14px;bottom:14px;padding:4px 9px;border-radius:5px;background:#16101dcc;color:white;font:500 11px/1.4 Arial,sans-serif;font-variant-numeric:tabular-nums}
+.folio-film-duration:empty{display:none}
+@keyframes folio-video-spin{to{transform:rotate(360deg)}}
+@media(max-width:600px){
+  .folio-film-toolbar{padding:8px 12px;gap:8px;font-size:11px}
+  .folio-film-actions{gap:10px}
+  .folio-film-quality,.folio-film-download{font-size:11px}
+  .folio-film-quality{gap:5px}
+  .folio-film-play-icon{width:62px;height:62px}
+}
+@media(prefers-reduced-motion:reduce){.folio-film-play-icon{transition:none}.folio-film-spinner{animation:none}}
