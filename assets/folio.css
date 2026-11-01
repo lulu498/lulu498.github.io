@@ -1439,3 +1439,109 @@ body:has(.folio-full-editor) main>footer{padding-bottom:205px}
 .folio-video-grid .folio-film-actions{justify-content:flex-start;gap:8px 12px}
 .folio-video-grid .folio-video-version-status{flex-basis:100%}
 @media(min-width:761px){.folio-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* Explicit asset deletion in author mode. */
+.folio-card-video-item{min-width:0;width:100%}
+.folio-card-video-item>.folio-card-video{width:100%}
+.folio-asset-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px;padding:10px 0}
+.folio-selected-asset{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.folio-selected-asset>.folio-asset-name{flex-basis:100%;overflow-wrap:anywhere}
+.folio-delete-media,.folio-undo-delete{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:8px 12px;border:1px solid #c58b8b;border-radius:9px;background:#fff5f3;color:#8a2929;font:inherit;font-size:13px;font-weight:600;white-space:nowrap;cursor:pointer}
+.folio-delete-media:hover{background:#ffe5e0;border-color:#a64a4a}
+.folio-delete-media:focus-visible,.folio-undo-delete:focus-visible{outline:3px solid #8e5274;outline-offset:3px}
+.folio-delete-media:disabled,.folio-undo-delete:disabled{opacity:.5;cursor:not-allowed}
+.folio-undo-delete{color:#65405b;border-color:#bfa2b7;background:#fff8fc}
+.folio-draft-delete-help{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:16px 0}
+.folio-draft-delete-help .folio-draft-note{flex:1;min-width:180px;margin:0}
+.folio-gallery-edit{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.folio-gallery-edit .media-move-status{margin:0}
+.project-editor .asset-row{grid-template-columns:52px minmax(0,1fr) 56px 44px 44px 108px}
+.project-editor .asset-row .folio-delete-media{display:inline-flex;width:100%;min-width:0;min-height:44px;padding:8px 10px;background:#fff5f3;border-color:#c58b8b;color:#8a2929}
+@media(max-width:640px){
+ .project-editor .asset-row{grid-template-columns:44px minmax(0,1fr) 40px 40px 108px;gap:6px}
+ .folio-delete-media,.folio-undo-delete{min-height:44px}
+}
+
+/* Media-only galleries, with direct author controls above the pictures and videos. */
+#works .project-grid.collection-grid>.collection-project:nth-child(n){display:block;padding-block:24px}
+#works .project-grid.collection-grid>.collection-project:nth-child(n)>.folio-project-media{grid-row:auto;padding:8px clamp(18px,3vw,44px) 24px;border-radius:20px}
+.folio-project-edit-strip{position:relative;z-index:2;display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.folio-project-edit-strip button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:44px;min-height:44px;padding:9px 12px;border:1px solid #bfa0b1;border-radius:10px;background:#fff8fc;color:#70465e;cursor:pointer}
+.folio-project-edit-strip button:disabled{opacity:.4;cursor:not-allowed}
+.folio-project-edit-strip .folio-manage-assets{font-weight:600;font-size:13px}
+.folio-media-heading-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px;flex-shrink:0}
+.folio-media-heading-actions>span{font-size:11px;color:#8c7283}
+.folio-delete-media,.project-editor .asset-row .folio-delete-media{min-height:44px;background:#b23747;border-color:#a92b3d;color:#fff!important;box-shadow:0 2px 6px #8222361a}
+.folio-delete-media:hover,.project-editor .asset-row .folio-delete-media:hover:not(:disabled){background:#982434;border-color:#982434}
+.folio-tile-delete{padding:0 0 10px;margin:0}
+.folio-section-heading{flex-wrap:wrap;row-gap:8px}
+.image-view-bar .folio-delete-media{margin-left:auto}
+@media(max-width:600px){
+ #works .project-grid.collection-grid>.collection-project:nth-child(n){padding-block:18px}
+ #works .project-grid.collection-grid>.collection-project:nth-child(n)>.folio-project-media{padding:4px 14px 18px;border-radius:16px}
+ .folio-section-heading h3>span{display:none}
+ .folio-media-heading-actions{gap:6px}
+ .folio-media-heading-actions .folio-delete-media{padding:8px 10px;font-size:12px}
+ .folio-project-edit-strip{gap:6px}
+}
+
+/* Consistent typography around media; image/video geometry and column rules are unchanged. */
+.folio-project-media,.folio-split-gallery{--folio-caption-font:"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+.folio-project-media .folio-section-heading h3,.folio-split-gallery .folio-section-heading h3{font:600 16px/1.5 var(--folio-caption-font)!important;letter-spacing:.02em!important;color:#513c4b!important}
+.folio-media-heading-actions{align-items:center;gap:10px}
+.folio-section-heading .folio-media-total{display:inline-flex;align-items:center;justify-content:center;min-width:42px;padding:3px 9px;border:1px solid #dbc8d4;border-radius:99px;background:#f7edf3;color:#7b6072;font:500 12px/1.5 var(--folio-caption-font);font-variant-numeric:tabular-nums;white-space:nowrap}
+.folio-project-media .folio-carousel-footer,.folio-split-gallery .folio-carousel-footer{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;min-height:54px;padding:10px 0;font:400 12px/1.6 var(--folio-caption-font)}
+.folio-project-media .folio-carousel-footer .folio-carousel-hint,.folio-split-gallery .folio-carousel-footer .folio-carousel-hint{order:0;min-width:0;text-align:center;color:#8c7182;white-space:nowrap}
+.folio-picture-count{font-weight:500;letter-spacing:.04em;font-variant-numeric:tabular-nums;color:#705568;white-space:nowrap}
+.folio-rotation-toggle{font:500 12px/1.5 var(--folio-caption-font);white-space:nowrap}
+.folio-project-media .folio-card-video-copy{display:flex!important;align-items:center;justify-content:space-between;gap:10px 16px;padding:14px 18px}
+.folio-project-media .folio-card-video-copy>strong{flex:none;font:600 14px/1.5 var(--folio-caption-font);font-variant-numeric:tabular-nums;letter-spacing:.02em;color:#f7edf4;white-space:nowrap}
+.folio-project-media .folio-card-video-copy>small{margin-left:auto;font:400 12px/1.6 var(--folio-caption-font);color:#cbb8c6;text-align:right;white-space:nowrap}
+.folio-split-gallery .folio-now-playing{display:flex;align-items:center;gap:8px;padding:12px 0;font:500 14px/1.6 var(--folio-caption-font);color:#65495e}
+.folio-now-playing>strong{font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.folio-film-choice-copy{gap:3px}
+.folio-film-choice-copy>strong{font:600 13px/1.5 var(--folio-caption-font);font-variant-numeric:tabular-nums}
+.folio-film-choice-copy>small{font:400 11px/1.6 var(--folio-caption-font);color:#917586}
+.folio-selected-asset>.folio-asset-name{font:400 12px/1.6 var(--folio-caption-font);color:#8b6e81}
+.folio-film .folio-video-versions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;gap:8px;padding:12px 14px;font-family:var(--folio-caption-font)}
+.folio-film .folio-video-versions-label{grid-column:1/-1;font-size:11px;font-weight:400;line-height:1.5;color:#bba5b5}
+.folio-film .folio-video-version{display:flex;min-width:0;align-items:center;justify-content:center;flex-direction:column;gap:3px;padding:8px 10px;font-family:var(--folio-caption-font);text-align:center}
+.folio-film .folio-video-version strong{font-size:13px;font-weight:600;line-height:1.5;white-space:nowrap}
+.folio-film .folio-video-version small{font-size:11px;line-height:1.5;font-variant-numeric:tabular-nums;white-space:nowrap}
+.folio-film .folio-film-toolbar{display:flex;flex-direction:column;align-items:stretch;gap:7px;padding:11px 14px;font:400 12px/1.6 var(--folio-caption-font)}
+.folio-film .folio-film-time{font-size:11px;color:#bfa8b9;white-space:nowrap;font-variant-numeric:tabular-nums}
+.folio-film .folio-film-actions{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:6px 14px;min-width:0}
+.folio-film .folio-film-download,.folio-film button.folio-film-download,.folio-film .folio-film-generate{font:500 12px/1.5 var(--folio-caption-font);white-space:nowrap}
+.folio-film .folio-video-version-status{flex-basis:100%;font-size:11px;line-height:1.6;color:#d3bdcd}
+.folio-film .folio-film-message,.folio-film .folio-film-error{font:400 12px/1.75 var(--folio-caption-font);overflow-wrap:anywhere}
+.folio-project-media .folio-delete-media,.folio-split-gallery .folio-delete-media{font:600 12px/1.5 var(--folio-caption-font);white-space:nowrap}
+@media(max-width:600px){
+ .folio-project-media .folio-section-heading h3,.folio-split-gallery .folio-section-heading h3{font-size:15px!important}
+ .folio-project-media .folio-card-video-copy{padding:12px 14px;gap:8px}
+ .folio-project-media .folio-card-video-copy>strong{font-size:13px}
+ .folio-project-media .folio-card-video-copy>small{font-size:11px}
+ .folio-project-media .folio-carousel-footer,.folio-split-gallery .folio-carousel-footer{gap:8px;font-size:11px}
+ .folio-film .folio-video-versions,.folio-film .folio-film-toolbar{padding-inline:12px}
+}
+
+/* Make the selected export source explicit beside the existing quality choices. */
+.folio-film .folio-export-video-note{display:block;padding:7px 14px;background:#211b25;color:#d7c2d1;font:400 11px/1.65 var(--folio-caption-font);overflow-wrap:anywhere}
+.folio-export-choice-help{grid-column:1/-1;margin:0;font-size:11px;line-height:1.65;color:#826477;overflow-wrap:anywhere}
+.folio-video-versions>.folio-video-version:only-of-type{grid-column:1/-1}
+
+/* Keep the template explanation, independently of imported project.description. */
+#works .folio-template-summary{position:relative;z-index:1;margin:0 0 22px;padding:22px clamp(18px,3vw,44px);border:1px solid #d9c5d2;border-radius:18px;background:#fffaf9c9;font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+#works .folio-template-copy-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+#works .folio-template-copy-heading h3{margin:0;font-size:16px;font-weight:600;line-height:1.5;letter-spacing:.02em;color:#513c4b}
+#works .folio-template-copy-heading .case-edit{min-height:40px;padding:8px 12px;font-size:12px;line-height:1.5;border-radius:8px}
+#works .folio-template-summary .case-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 26px;margin:0;padding:0;border:0}
+#works .folio-template-summary .case-facts>div{display:block;min-width:0}
+#works .folio-template-summary .case-facts dt{margin:0 0 5px;font-size:12px;line-height:1.7;color:#8c7182}
+#works .folio-template-summary .case-facts dd{font-size:14px;line-height:1.85;color:#654f60;white-space:pre-line;overflow-wrap:anywhere}
+#works .folio-template-summary .case-prose{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:20px;padding-top:18px;border-top:1px solid #dfcfd9}
+#works .folio-template-summary .case-prose>section{min-width:0}
+#works .folio-template-summary .case-prose h4{font-size:12px;font-weight:500;line-height:1.7;letter-spacing:0;color:#8c7182}
+#works .folio-template-summary .case-prose p{font-size:14px;line-height:1.85;color:#654f60;white-space:pre-line;overflow-wrap:anywhere}
+#works .folio-template-summary .case-empty-note{margin:0;font-size:13px;line-height:1.8;color:#8c7182}
+@media(max-width:760px){#works .folio-template-summary .case-facts,#works .folio-template-summary .case-prose{grid-template-columns:1fr;gap:16px}#works .folio-template-summary{padding:18px 16px;margin-bottom:16px;border-radius:14px}}
